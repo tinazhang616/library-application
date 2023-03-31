@@ -5,11 +5,8 @@ function findAccountById(accounts, id) {
 }
 
 function sortAccountsByLastName(accounts) {
-  let arr = [];
-  accounts.forEach((element)=>{
-    let dict=new Object();
-    dict.name = element.name;
-    arr.push(dict);
+  let arr=accounts.map(({name})=>{
+    return {name:name};
   });
   arr.sort((itemA,itemB)=>{
     const nameA = itemA.name.last;
